@@ -24,5 +24,34 @@ namespace Exercise3
         {
             InitializeComponent();
         }
+
+        private void btnRoll_Click(object sender, RoutedEventArgs e)
+        {
+            //Update();
+            Update2();
+        }
+
+        public void Update()
+        {
+            Random rng = new Random();
+
+            int randomNumber = rng.Next(1, 7);
+
+            tblkResult.Text = randomNumber.ToString();
+        }
+
+        public async void Update2()
+        {
+            Random rng = new Random();
+            int randomNumber;
+
+            for (int i = 0; i < 20; i++)
+            {
+                randomNumber = rng.Next(1, 7);
+                tblkResult.Text = randomNumber.ToString();
+                await Task.Delay(50);
+            }
+
+        }
     }
 }
